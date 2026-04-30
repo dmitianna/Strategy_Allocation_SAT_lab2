@@ -11,12 +11,12 @@ SOURCES += \
         Allocator/Allocator.cpp
 
 HEADERS += \
-    allocator/Allocator.h \
-    allocator/DataTypes.h
+    Allocator/Allocator.h \
+    Allocator/DataTypes.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-INCLUDEPATH += $$PWD/allocator
+INCLUDEPATH += $$PWD/Allocator
