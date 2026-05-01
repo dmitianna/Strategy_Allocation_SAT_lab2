@@ -122,11 +122,41 @@ void testHeapBlocks(size_t N)
     delete[] arr;
 }
 
+void testStaticPool(size_t N)
+{
+    char* buffer = new char[sizeof(MyClass) * N];
+    Allocator alloc(sizeof(MyClass), N, buffer);
+
+    MyClass** arr = new MyClass*[N];
+
+    auto start = Clock::now();
+
+    for (size_t i = 0; i < N; ++i)
+    {
+        void* mem = alloc.Allocate(sizeof(MyClass));
+        arr[i] = new (mem) MyClass(i, i * 1.0f);
+    }
+
+    auto end = Clock::now();
+
+    std::cout << "allocator(static pool): "<< std::chrono::duration<double, std::milli>(end - start).count()<< " ms\n";
+
+    for (size_t i = 0; i < N; ++i)
+    {
+        arr[i]->~MyClass();
+        alloc.Deallocate(arr[i]);
+    }
+
+    delete[] arr;
+    delete[] buffer;
+}
+
 int main()
 {
     const size_t N = 500000;
     testDefaultNew(N);
     testHeapBlocks(N);
     testHeapPool(N);
+    testStaticPool(N);
     return 0;
 }
