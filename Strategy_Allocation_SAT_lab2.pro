@@ -16,6 +16,7 @@ SOURCES += \
 HEADERS += \
     Allocator/Allocator.h \
     Allocator/DataTypes.h \
+    SAT_DPLL/IBranchingStrategy.h \
     SAT_DPLL/BBV.h \
     SAT_DPLL/NodeBoolTree.h \
     SAT_DPLL/boolequation.h \
