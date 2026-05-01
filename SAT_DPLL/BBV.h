@@ -2,9 +2,8 @@
 #define BBV_H
 
 #include <iostream>
-using namespace std;
-
-typedef unsigned char byte;
+#include "DataTypes.h"
+//using namespace std;
 
 class X
 {
@@ -47,8 +46,8 @@ public:
     operator char*();//перегрузка операции тип
     int getWeight();//метод для получения веса вектора
     int getSize();//метод для получения размера вектора
-    friend ostream & operator << (ostream &r, BBV& V);
-    friend istream & operator >> (istream &r, BBV& V);
+    friend std::ostream & operator << (std::ostream &r, BBV& V);
+    friend std::istream & operator >> (std::istream &r, BBV& V);
 };
 
 

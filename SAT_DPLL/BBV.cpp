@@ -476,7 +476,7 @@ X X::operator=(X& v)
         throw 1;
 }
 
-ostream & operator << (ostream &r, BBV& V)
+std::ostream & operator << (std::ostream &r, BBV& V)
 {
     if (V.vec != NULL)//првоверяем существование ячеек булева вектора
     {
@@ -487,9 +487,9 @@ ostream & operator << (ostream &r, BBV& V)
             if (j > 0)//в каждую ячейку заходим 8 раз. счетчик j отвечает за количество заходов в ячейку
             {
                 if (V.vec[k] & mask)//с помощью маски получаем значение бита и выводим его
-                    cout << '1';
+                    std::cout << '1';
                 else
-                    cout << '0';
+                    std::cout << '0';
                 mask <<= 1;
                 j--;
                 i++;
@@ -501,25 +501,25 @@ ostream & operator << (ostream &r, BBV& V)
                 mask = 1;
             }
         }
-        cout << '\n';
+        std::cout << '\n';
     }
     return r;
 }
-istream & operator >> (istream &r, BBV& V)// return r;
+std::istream & operator >> (std::istream &r, BBV& V)// return r;
 {
     int str_size;//запрашиваем размер вектора
-    cout << "Input size for BBV:\n";
-    cin >> str_size;
+    std::cout << "Input size for BBV:\n";
+    std::cin >> str_size;
     while (str_size < 0)//исключаем случай отрицательного размера вектора
     {
-        cout << "Re-enter size for BBV:\n";
-        cin >> str_size;
+        std::cout << "Re-enter size for BBV:\n";
+        std::cin >> str_size;
     }
     char* str = new char[str_size + 1];//создаем строку для вектора у учетом символа \0
     if (str != NULL)//если память выделилась, то вводим в строку и инициализируем ей вектор
     {
-        cout << "Input BBV:\n";
-        cin >> str;
+        std::cout << "Input BBV:\n";
+        std::cin >> str;
         V.Init(str);
         V.len = str_size;
         V.size = (str_size - 1) / 8 + 1;

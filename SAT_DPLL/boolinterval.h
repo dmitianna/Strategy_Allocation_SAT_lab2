@@ -2,6 +2,7 @@
 #define BOOLINTERVAL_H
 
 #include "BBV.h"
+using namespace std;
 
 class BoolInterval
 {
