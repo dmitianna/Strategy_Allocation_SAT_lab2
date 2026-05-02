@@ -8,11 +8,20 @@ CONFIG += c++17 cmdline
 
 SOURCES += \
         main.cpp \
-        Allocator/Allocator.cpp
+        Allocator/Allocator.cpp \
+        SAT_DPLL/BBV.cpp \
+        SAT_DPLL/boolequation.cpp \
+        SAT_DPLL/boolinterval.cpp
 
 HEADERS += \
     Allocator/Allocator.h \
-    Allocator/DataTypes.h
+    Allocator/DataTypes.h \
+    SAT_DPLL/BBV.h \
+    SAT_DPLL/NodeBoolTree.h \
+    SAT_DPLL/boolequation.h \
+    SAT_DPLL/boolinterval.h
+
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -20,3 +29,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 INCLUDEPATH += $$PWD/Allocator
+INCLUDEPATH += $$PWD/SAT_DPLL
