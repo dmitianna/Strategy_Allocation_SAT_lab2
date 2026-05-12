@@ -7,7 +7,7 @@ class IBranchingStrategy
 {
 public:
     virtual ~IBranchingStrategy() = default;
-    virtual int chooseColumn(const BoolEquation& equation) = 0;
+    virtual int chooseColumn(BoolEquation& equation) = 0;
 };
 
 #endif // IBRANCHINGSTRATEGY_H

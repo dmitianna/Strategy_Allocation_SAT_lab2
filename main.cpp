@@ -11,7 +11,7 @@
 #include "boolinterval.h"
 #include "boolequation.h"
 #include "Allocator.h"
-/*
+
 int main(int argc, char *argv[])
 {
     QStringList full_file_list;
@@ -174,6 +174,3 @@ int main(int argc, char *argv[])
     return 0;
 
 }
-*/
-int main(int argc, char *argv[])
-{ return 0;}
