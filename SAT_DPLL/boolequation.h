@@ -7,8 +7,8 @@ class BoolEquation
 {
 public:
 
-	BoolEquation(BoolInterval **cnf, BoolInterval *root, int cnfSize, int count, BBV mask);
-	BoolEquation(BoolEquation &equation);
+    BoolEquation(BoolInterval **cnf, BoolInterval *root, int cnfSize, int count, BBV mask,IBranchingStrategy* strategy = nullptr);
+    BoolEquation(BoolEquation &equation,IBranchingStrategy* strategy = nullptr);
 	int CheckRules();
 
 	void Simplify(int ixCol, char value);
