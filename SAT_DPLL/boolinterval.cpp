@@ -1,7 +1,7 @@
 #include "boolinterval.h"
 #include "BBV.h"
 #include <cstring>
-#include<iostream>
+
 BoolInterval::BoolInterval(size_t len)
 {
 	vec = BBV(len);

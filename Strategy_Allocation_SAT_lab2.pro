@@ -11,15 +11,18 @@ SOURCES += \
         Allocator/Allocator.cpp \
         SAT_DPLL/BBV.cpp \
         SAT_DPLL/boolequation.cpp \
-        SAT_DPLL/boolinterval.cpp
+        SAT_DPLL/boolinterval.cpp \
+        SAT_DPLL/strategylesscommon.cpp
 
 HEADERS += \
     Allocator/Allocator.h \
     Allocator/DataTypes.h \
+    SAT_DPLL/IBranchingStrategy.h \
     SAT_DPLL/BBV.h \
     SAT_DPLL/NodeBoolTree.h \
     SAT_DPLL/boolequation.h \
-    SAT_DPLL/boolinterval.h
+    SAT_DPLL/boolinterval.h \
+    SAT_DPLL/strategylesscommon.h
 
 
 
