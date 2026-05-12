@@ -1,8 +1,6 @@
 #include "boolequation.h"
 #include <vector>
 #include <algorithm>
-#include <ostream>
-#include <string>
 
 BoolEquation::BoolEquation(BoolInterval **cnf, BoolInterval *root, int cnfSize, int count, BBV mask)
 {
