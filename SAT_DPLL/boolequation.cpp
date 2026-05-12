@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 
-BoolEquation::BoolEquation(BoolInterval **cnf, BoolInterval *root, int cnfSize, int count, BBV mask)
+BoolEquation::BoolEquation(BoolInterval **cnf, BoolInterval *root, int cnfSize, int count, BBV mask,IBranchingStrategy* strategy)
 {
 	this->cnf = new BoolInterval*[cnfSize];
 
@@ -17,7 +17,7 @@ BoolEquation::BoolEquation(BoolInterval **cnf, BoolInterval *root, int cnfSize, 
 
 }
 
-BoolEquation::BoolEquation(BoolEquation &equation)
+BoolEquation::BoolEquation(BoolEquation &equation ,IBranchingStrategy* strategy)
 {
 	this->cnf = new BoolInterval*[equation.cnfSize];
 
