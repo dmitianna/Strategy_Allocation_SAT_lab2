@@ -11,19 +11,34 @@
 #include "boolinterval.h"
 #include "boolequation.h"
 #include "Allocator.h"
-
+#include "strategylesscommon.h"
+#include "IBranchingStrategy.h"
 int main(int argc, char *argv[])
 {
+    Allocator allocBoolInterval();
+    Allocator allocBoolEquation();
+    Allocator allocNodeBoolTree();
+    Allocator allocCNF();
+    Allocator allocStrategy();
+
     QStringList full_file_list;
     QList<QStringList> Elements;
     std::string filepath;
     QStringList inputs;
+
+    BoolInterval** CNF = nullptr;
+    int cnfSize = 0;
+    BoolInterval* root = nullptr;
+    BoolEquation* boolequation = nullptr;
+    NodeBoolTree* startNode = nullptr;
+    IBranchingStrategy* strategy = nullptr;
+
     //std::cout << "Input file path...\n";
     //std::cin >> filepath;
     // Hardcode input
     //	filepath = "sat_ex_2.pla";
     //filepath = "Sat_ex11_3.pla";
-    filepath = "Sat_ex30_3.pla";
+    filepath = "C:/Users/dmiti/Documents/repositories/Strategy_Allocation_SAT_lab2/SAT_DPLL/SatExamples/sat_ex_2.pla";
     QFile file(QString::fromUtf8(filepath.c_str()));
 
     //считываем весь файл
@@ -41,8 +56,12 @@ int main(int argc, char *argv[])
         }
 
         for (int i = 0; i < cnfSize; i++) { // Заполняем массив
-            QString strv = full_file_list[i];
-            CNF[i] = new BoolInterval(strv.toUtf8().trimmed().data());
+            QString strv = full_file_list[i].trimmed();
+
+
+            //CNF[i] = new BoolInterval(strv.toUtf8().trimmed().data());
+            void* mem = allocBoolInterval.Allocate(sizeof(BoolInterval));
+            CNF[i] = new (mem) BoolInterval(strv.toUtf8().data());
         }
 
         QString rootvec = "";
@@ -64,9 +83,17 @@ int main(int argc, char *argv[])
         BBV dnc(d.data());
 
         // Создаем пустой корень уравнения;
-        BoolInterval *root = new BoolInterval(vec, dnc);
+        //BoolInterval *root = new BoolInterval(vec, dnc);
+        void* memRoot = allocBoolInterval.Allocate(sizeof(BoolInterval));
+        BoolInterval* root = new (memRoot) BoolInterval(vec, dnc);
 
-        BoolEquation *boolequation = new BoolEquation(CNF, root, cnfSize, cnfSize, vec);
+        // IBranchingStrategy* strategy = new MinOccurenceBranchingStrategy();	// Создаём нашу стратегию
+        void* memStrategy = allocStrategy.Allocate(sizeof(StrategyLessCommon));
+        strategy = new (memStrategy) StrategyLessCommon();
+        //BoolEquation *boolequation = new BoolEquation(CNF, root, cnfSize, cnfSize, vec, strategy);	// Создаём BoolEquation, передавая указатель на стратеги
+        void* memEq = allocBoolEquation.Allocate(sizeof(BoolEquation));
+        BoolEquation* boolequation = new (memEq) BoolEquation(CNF, root, cnfSize, cnfSize, vec, strategy);
+
 
         // Алгоритм поиска корня. Работаем всегда с верхушкой стека.
         // Шаг 1. Правила выполняются? Нет - Ветвление Шаг 5. Да - Упрощаем Шаг 2.
@@ -85,7 +112,10 @@ int main(int argc, char *argv[])
 
         bool rootIsFinded = false;
         stack<NodeBoolTree *> BoolTree;
-        NodeBoolTree *startNode = new NodeBoolTree(boolequation);
+        //NodeBoolTree *startNode = new NodeBoolTree(boolequation);
+        void* memNode = allocNodeBoolTree.Allocate(sizeof(NodeBoolTree));
+        NodeBoolTree* startNode = new (memNode) NodeBoolTree(boolequation);
+
         BoolTree.push(startNode);
 
         do {
@@ -133,14 +163,24 @@ int main(int argc, char *argv[])
 
                         int indexBranching = currentEquation->ChooseColForBranching();
 
-                        BoolEquation *Equation0 = new BoolEquation(*currentEquation);
-                        BoolEquation *Equation1 = new BoolEquation(*currentEquation);
+                        //BoolEquation *Equation0 = new BoolEquation(*currentEquation);
+                        void* memEq0 = allocBoolEquation.Allocate(sizeof(BoolEquation));
+                        BoolEquation* Equation0 = new (memEq0) BoolEquation(*currentEquation, strategy);
+
+                        //BoolEquation *Equation1 = new BoolEquation(*currentEquation);
+                        void* memEq1 = allocBoolEquation.Allocate(sizeof(BoolEquation));
+                        BoolEquation* Equation1 = new (memEq1) BoolEquation(*currentEquation, strategy);
+
 
                         Equation0->Simplify(indexBranching, '0');
                         Equation1->Simplify(indexBranching, '1');
 
-                        NodeBoolTree *Node0 = new NodeBoolTree(Equation0);
-                        NodeBoolTree *Node1 = new NodeBoolTree(Equation1);
+                        //NodeBoolTree *Node0 = new NodeBoolTree(Equation0);
+                        void* memNode0 = allocNodeBoolTree.Allocate(sizeof(NodeBoolTree));
+                        NodeBoolTree* Node0 = new (memNode0) NodeBoolTree(Equation0);
+                        //NodeBoolTree *Node1 = new NodeBoolTree(Equation1);
+                        void* memNode1 = allocNodeBoolTree.Allocate(sizeof(NodeBoolTree));
+                        NodeBoolTree* Node1 = new (memNode1) NodeBoolTree(Equation1);
 
                         currentNode->lt = Node0;
                         currentNode->rt = Node1;
