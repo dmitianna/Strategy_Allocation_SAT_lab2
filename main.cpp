@@ -15,6 +15,7 @@
 #include "IBranchingStrategy.h"
 int main(int argc, char *argv[])
 {
+    /*
     Allocator allocBoolInterval();
     Allocator allocBoolEquation();
     Allocator allocNodeBoolTree();
@@ -210,7 +211,23 @@ int main(int argc, char *argv[])
     } else {
         std::cout << "File does not exists.\n";
     }
+*/
 
+    auto measureType = [](const char* name, auto* dummy) {
+        std::cout << "=== " << name << " ===\n";
+        std::cout << "sizeof: " << sizeof(*dummy) << " bytes\n";
+        std::cout << "Выравнивание: " << alignof(decltype(*dummy)) << " bytes\n";
+        std::cout << "\n";
+    };
+
+    BoolInterval* dummyInterval = nullptr;
+    BoolEquation* dummyEquation = nullptr;
+    NodeBoolTree* dummyNode = nullptr;
+    IBranchingStrategy* dummystrategy = nullptr;
+    measureType("BoolInterval", dummyInterval);
+    measureType("BoolEquation", dummyEquation);
+    measureType("NodeBoolTree", dummyNode);
+    measureType("IBranchingStrategy", dummystrategy);
     return 0;
 
 }
