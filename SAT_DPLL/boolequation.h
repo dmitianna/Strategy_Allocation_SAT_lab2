@@ -14,20 +14,6 @@ public:
 	void Simplify(int ixCol, char value);
 	int ChooseColForBranching();
 
-    int getCnfSize() const {return cnfSize;}
-    int getCount() const {return count;}
-    BoolInterval** getCnf() const {return cnf;}
-    BoolInterval* getRoot() const {return root;}
-    BBV& getMask() {return mask;}
-    const BBV& getMask() const {return mask;}
-
-    void setBranchingStrategy(IBranchingStrategy* strategy)
-    {
-        if(strategy != nullptr) _strategy = strategy;
-        else return;
-    }
-
-private:
     BoolInterval **cnf;//множество интервалов
     BoolInterval *root;//Корень уравнения
     int cnfSize; // Размер КНФ
@@ -40,6 +26,12 @@ private:
     bool Rule4Col0(BBV vector);
     bool Rule5Col1(BBV vector);
 
+    void setBranchingStrategy(IBranchingStrategy* strategy)
+    {
+        if(strategy != nullptr) _strategy = strategy;
+        else return;
+    }
+private:
     IBranchingStrategy* _strategy;
 };
 
