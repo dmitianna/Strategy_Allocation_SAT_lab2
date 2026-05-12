@@ -211,6 +211,57 @@ int main(int argc, char *argv[])
         std::cout << "File does not exists.\n";
     }
 
+    if (startNode)
+    {
+        std::stack<NodeBoolTree*> freeStack;
+        freeStack.push(startNode);
+        while (!freeStack.empty())
+        {
+            NodeBoolTree* node = freeStack.top();
+            freeStack.pop();
+            if (node->lt) freeStack.push(node->lt);
+            if (node->rt) freeStack.push(node->rt);
+
+            if (node->eq)
+            {
+                node->eq->~BoolEquation();
+                allocBoolEquation.Deallocate(node->eq);
+                node->eq = nullptr;
+            }
+            node->~NodeBoolTree();
+            allocNodeBoolTree.Deallocate(node);
+        }
+    }
+
+    if (CNF)
+    {
+        for (int i = 0; i < cnfSize; i++)
+        {
+            if (CNF[i])
+            {
+                CNF[i]->~BoolInterval();
+                allocBoolInterval.Deallocate(CNF[i]);
+                CNF[i] = nullptr;
+            }
+        }
+        allocCNF.Deallocate(CNF);
+        CNF = nullptr;
+    }
+
+    if (root)
+    {
+        root->~BoolInterval();
+        allocBoolInterval.Deallocate(root);
+        root = nullptr;
+    }
+
+    if (strategy)
+    {
+        strategy->~IBranchingStrategy();
+        allocStrategy.Deallocate(strategy);
+        strategy = nullptr;
+    }
+
     return 0;
 
 }
