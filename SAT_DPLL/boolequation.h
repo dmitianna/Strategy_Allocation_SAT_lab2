@@ -28,8 +28,7 @@ public:
 
     void setBranchingStrategy(IBranchingStrategy* strategy)
     {
-        if(strategy != nullptr) _strategy = strategy;
-        else return;
+        _strategy = strategy;
     }
 private:
     IBranchingStrategy* _strategy;

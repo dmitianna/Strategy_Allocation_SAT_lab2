@@ -9,11 +9,11 @@ BoolEquation::BoolEquation(BoolInterval **cnf, BoolInterval *root, int cnfSize, 
 	for (int i = 0; i < cnfSize; i++) {
 		this->cnf[i] = cnf[i];
 	}
-
 	this->root = root;
 	this->cnfSize = cnfSize;
 	this->count = count;
 	this->mask = mask;
+    this ->setBranchingStrategy(strategy);
 
 }
 
@@ -29,6 +29,7 @@ BoolEquation::BoolEquation(BoolEquation &equation ,IBranchingStrategy* strategy)
 	this->cnfSize = equation.cnfSize;
 	this->count = equation.count;
 	this->mask = equation.mask;
+    this ->setBranchingStrategy(strategy);
 }
 
 // Проверка правил
