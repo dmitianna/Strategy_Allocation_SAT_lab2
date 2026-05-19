@@ -1,6 +1,6 @@
 #include "boolequation.h"
-#include <vector>
-#include <algorithm>
+//#include <vector>
+//#include <algorithm>
 
 BoolEquation::BoolEquation(BoolInterval **cnf, BoolInterval *root, int cnfSize, int count, BBV mask,IBranchingStrategy* strategy)
 {
@@ -9,11 +9,11 @@ BoolEquation::BoolEquation(BoolInterval **cnf, BoolInterval *root, int cnfSize, 
 	for (int i = 0; i < cnfSize; i++) {
 		this->cnf[i] = cnf[i];
 	}
-
 	this->root = root;
 	this->cnfSize = cnfSize;
 	this->count = count;
 	this->mask = mask;
+    this ->setBranchingStrategy(strategy);
 
 }
 
@@ -29,6 +29,7 @@ BoolEquation::BoolEquation(BoolEquation &equation ,IBranchingStrategy* strategy)
 	this->cnfSize = equation.cnfSize;
 	this->count = equation.count;
 	this->mask = equation.mask;
+    this ->setBranchingStrategy(strategy);
 }
 
 // Проверка правил
@@ -219,6 +220,15 @@ void BoolEquation::Simplify(int ixCol, char value)
 
 int BoolEquation::ChooseColForBranching()
 {
+    //просто обращаемся к стратегии.
+    if (!_strategy)
+    {
+        return 0;
+    }
+    return _strategy->chooseColumn(*this);
+}
+/*int BoolEquation::ChooseColForBranching()
+{
 	vector<int> indexes;
 	vector<int> values;
 	bool rezInit = false;
@@ -234,7 +244,7 @@ int BoolEquation::ChooseColForBranching()
 
 		if (interval != nullptr) {
 			if (!rezInit) {
-				for (int k = 0; k < indexes.size(); k++) {
+                for (int k = 0; k < indexes.size(); k++) {
 					if (interval->getValue(indexes.at(k)) == '-') {
 						values.push_back(1);
 					} else {
@@ -257,4 +267,4 @@ int BoolEquation::ChooseColForBranching()
 	int minElementIndex = std::min_element(values.begin(), values.end()) - values.begin();
 
 	return indexes.at(minElementIndex);
-}
+}*/
