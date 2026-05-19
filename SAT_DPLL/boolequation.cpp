@@ -14,7 +14,6 @@ BoolEquation::BoolEquation(BoolInterval **cnf, BoolInterval *root, int cnfSize, 
 	this->count = count;
 	this->mask = mask;
     this ->setBranchingStrategy(strategy);
-
 }
 
 BoolEquation::BoolEquation(BoolEquation &equation ,IBranchingStrategy* strategy)
@@ -29,7 +28,15 @@ BoolEquation::BoolEquation(BoolEquation &equation ,IBranchingStrategy* strategy)
 	this->cnfSize = equation.cnfSize;
 	this->count = equation.count;
 	this->mask = equation.mask;
-    this ->setBranchingStrategy(strategy);
+    // Если не передали стратегию, скопируем из переданного объекта
+    if (strategy)
+    {
+        this->_strategy = strategy;
+    }
+    else
+    {
+        this->_strategy = equation._strategy;
+    }
 }
 
 // Проверка правил
