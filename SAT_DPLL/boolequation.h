@@ -26,9 +26,11 @@ public:
     bool Rule4Col0(BBV vector);
     bool Rule5Col1(BBV vector);
 
-    void setBranchingStrategy(IBranchingStrategy* strategy)
+    bool setBranchingStrategy(IBranchingStrategy* strategy)
     {
+        if (!strategy) return false;
         _strategy = strategy;
+        return true;
     }
 private:
     IBranchingStrategy* _strategy;

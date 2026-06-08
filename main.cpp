@@ -15,9 +15,9 @@
 #include "IBranchingStrategy.h"
 int main()
 {
-    Allocator allocBoolInterval(32, 200);
-    Allocator allocBoolEquation(64, 100);
-    Allocator allocNodeBoolTree(32, 100);
+    Allocator allocBoolInterval(sizeof(BoolInterval), 500);
+    Allocator allocBoolEquation(sizeof(BoolEquation), 500);
+    Allocator allocNodeBoolTree(sizeof(NodeBoolTree), 500);
     Allocator allocCNF(1024, 1);
     Allocator allocStrategy(8, 1);
 
@@ -38,7 +38,7 @@ int main()
     // Hardcode input
     //	filepath = "sat_ex_2.pla";
     //filepath = "Sat_ex11_3.pla";
-    filepath = "C:/Users/dmiti/Documents/repositories/Strategy_Allocation_SAT_lab2/SAT_DPLL/SatExamples/sat_ex_2.pla";
+    filepath = "C:/Users/dmiti/Documents/repositories/Strategy_Allocation_SAT_lab2/SAT_DPLL/SatExamples/Sat_ex11_2.pla";
     QFile file(QString::fromUtf8(filepath.c_str()));
 
     //считываем весь файл

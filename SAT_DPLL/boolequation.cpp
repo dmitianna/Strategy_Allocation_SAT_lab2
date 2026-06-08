@@ -1,4 +1,5 @@
 #include "boolequation.h"
+#include <stdexcept>
 //#include <vector>
 //#include <algorithm>
 
@@ -230,7 +231,7 @@ int BoolEquation::ChooseColForBranching()
     //просто обращаемся к стратегии.
     if (!_strategy)
     {
-        return 0;
+        throw std::logic_error("Branching strategy is not set");
     }
     return _strategy->chooseColumn(*this);
 }
