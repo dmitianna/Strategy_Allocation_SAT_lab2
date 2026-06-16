@@ -1,0 +1,850 @@
+{
+  "version": 2,
+  "warnings": [
+    {
+      "code": "V730",
+      "cwe": 457,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 1,
+      "message": "Not all members of a class are initialized inside the constructor. Consider inspecting: m_memory.",
+      "positions": [
+        {
+          "endLine": 93,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\Allocator\\Allocator.h",
+          "line": 93,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 1198105729,
+            "nextLine": 123,
+            "previousLine": 5816
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": "CERT-EXP53-CPP"
+    },
+    {
+      "code": "V690",
+      "cwe": 0,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "The 'X' class implements the copy assignment operator, but lacks a copy constructor. It is dangerous to use such a class.",
+      "positions": [
+        {
+          "endLine": 8,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.h",
+          "line": 8,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 2266,
+            "nextLine": 123,
+            "previousLine": 0
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V690",
+      "cwe": 0,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 3,
+      "message": "The 'BoolInterval' class implements the copy assignment operator, but lacks a copy constructor. It is dangerous to use such a class.",
+      "positions": [
+        {
+          "endLine": 7,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\boolinterval.h",
+          "line": 7,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 4668214,
+            "nextLine": 123,
+            "previousLine": 0
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V818",
+      "cwe": 0,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "It is more efficient to use an initialization list 'vec(vec_in), dnc(dnc_in)' rather than an assignment operator.",
+      "positions": [
+        {
+          "endLine": 44,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\boolinterval.cpp",
+          "line": 44,
+          "navigation": {
+            "columns": 0,
+            "currentLine": -1618387588,
+            "nextLine": 123,
+            "previousLine": 0
+          }
+        },
+        {
+          "endLine": 46,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\boolinterval.cpp",
+          "line": 46
+        },
+        {
+          "endLine": 47,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\boolinterval.cpp",
+          "line": 47
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V820",
+      "cwe": 0,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 3,
+      "message": "The 'zero' variable is not used after copying. Copying can be replaced with move/swap for optimization.",
+      "positions": [
+        {
+          "endLine": 103,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\boolinterval.cpp",
+          "line": 103,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 4153173,
+            "nextLine": 10702917,
+            "previousLine": 1015893
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V690",
+      "cwe": 0,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "The 'BoolEquation' class implements a copy constructor, but lacks the copy assignment operator. It is dangerous to use such a class.",
+      "positions": [
+        {
+          "endLine": 6,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\boolequation.h",
+          "line": 6,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 4668100,
+            "nextLine": 123,
+            "previousLine": -1983477038
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V688",
+      "cwe": 0,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 3,
+      "message": "The 'cnfSize' function argument possesses the same name as one of the class members, which can result in a confusion.",
+      "positions": [
+        {
+          "endLine": 5,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\boolequation.cpp",
+          "line": 5,
+          "navigation": {
+            "columns": 0,
+            "currentLine": -192831326,
+            "nextLine": 123,
+            "previousLine": 0
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": "CERT-DCL01-C"
+    },
+    {
+      "code": "V818",
+      "cwe": 0,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "It is more efficient to use an initialization list 'mask(mask)' rather than an assignment operator.",
+      "positions": [
+        {
+          "endLine": 5,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\boolequation.cpp",
+          "line": 5,
+          "navigation": {
+            "columns": 0,
+            "currentLine": -192831326,
+            "nextLine": 123,
+            "previousLine": 0
+          }
+        },
+        {
+          "endLine": 15,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\boolequation.cpp",
+          "line": 15
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V820",
+      "cwe": 0,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 3,
+      "message": "The 'mask' variable is not used after copying. Copying can be replaced with move/swap for optimization.",
+      "positions": [
+        {
+          "endLine": 15,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\boolequation.cpp",
+          "line": 15,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 2824985,
+            "nextLine": 1988789313,
+            "previousLine": 11279635
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V809",
+      "cwe": 0,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 3,
+      "message": "Verifying that a pointer value is not NULL is not required. The 'if (vec != __null)' check can be removed.",
+      "positions": [
+        {
+          "endLine": 8,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 8,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 372905,
+            "nextLine": 140841,
+            "previousLine": 123
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V668",
+      "cwe": 571,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "There is no sense in testing the 'vec' pointer against null, as the memory was allocated using the 'new' operator. The exception will be generated in the case of memory allocation error.",
+      "positions": [
+        {
+          "endLine": 24,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 24,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 11933293,
+            "nextLine": 123,
+            "previousLine": -332987762
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": "CERT-MEM52-CPP"
+    },
+    {
+      "code": "V668",
+      "cwe": 571,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "There is no sense in testing the 'vec' pointer against null, as the memory was allocated using the 'new' operator. The exception will be generated in the case of memory allocation error.",
+      "positions": [
+        {
+          "endLine": 45,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 45,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 372905,
+            "nextLine": 123,
+            "previousLine": 12503157
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": "CERT-MEM52-CPP"
+    },
+    {
+      "code": "V668",
+      "cwe": 571,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "There is no sense in testing the 'vec' pointer against null, as the memory was allocated using the 'new' operator. The exception will be generated in the case of memory allocation error.",
+      "positions": [
+        {
+          "endLine": 83,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 83,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 372905,
+            "nextLine": 123,
+            "previousLine": 50012581
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": "CERT-MEM52-CPP"
+    },
+    {
+      "code": "V809",
+      "cwe": 0,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 3,
+      "message": "Verifying that a pointer value is not NULL is not required. The 'if (vec != __null)' check can be removed.",
+      "positions": [
+        {
+          "endLine": 99,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 99,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 2983302,
+            "nextLine": 34889,
+            "previousLine": 5650469
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V668",
+      "cwe": 571,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "There is no sense in testing the 'vec' pointer against null, as the memory was allocated using the 'new' operator. The exception will be generated in the case of memory allocation error.",
+      "positions": [
+        {
+          "endLine": 102,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 102,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 372905,
+            "nextLine": 123,
+            "previousLine": 50012581
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": "CERT-MEM52-CPP"
+    },
+    {
+      "code": "V809",
+      "cwe": 0,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 3,
+      "message": "Verifying that a pointer value is not NULL is not required. The 'if (vec != __null)' check can be removed.",
+      "positions": [
+        {
+          "endLine": 171,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 171,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 372905,
+            "nextLine": 34889,
+            "previousLine": 173729
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V668",
+      "cwe": 571,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "There is no sense in testing the 'vec' pointer against null, as the memory was allocated using the 'new' operator. The exception will be generated in the case of memory allocation error.",
+      "positions": [
+        {
+          "endLine": 174,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 174,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 372905,
+            "nextLine": 123,
+            "previousLine": 50012581
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": "CERT-MEM52-CPP"
+    },
+    {
+      "code": "V809",
+      "cwe": 0,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 3,
+      "message": "Verifying that a pointer value is not NULL is not required. The 'if (vec != __null)' check can be removed.",
+      "positions": [
+        {
+          "endLine": 191,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 191,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 372905,
+            "nextLine": 34889,
+            "previousLine": 5650469
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V668",
+      "cwe": 571,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "There is no sense in testing the 'vec' pointer against null, as the memory was allocated using the 'new' operator. The exception will be generated in the case of memory allocation error.",
+      "positions": [
+        {
+          "endLine": 194,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 194,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 372905,
+            "nextLine": 123,
+            "previousLine": 200050406
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": "CERT-MEM52-CPP"
+    },
+    {
+      "code": "V1064",
+      "cwe": 0,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 1,
+      "message": "The 'k' operand of the modulo operation is less than the '8' operand. The result is always equal to the left operand.",
+      "positions": [
+        {
+          "endLine": 314,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 314,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 6037,
+            "nextLine": 123,
+            "previousLine": 113
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V668",
+      "cwe": 571,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "There is no sense in testing the 'str' pointer against null, as the memory was allocated using the 'new' operator. The exception will be generated in the case of memory allocation error.",
+      "positions": [
+        {
+          "endLine": 364,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 364,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 369449,
+            "nextLine": 123,
+            "previousLine": -2111072507
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": "CERT-MEM52-CPP"
+    },
+    {
+      "code": "V591",
+      "cwe": 393,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 1,
+      "message": "Non-void function should return a value.",
+      "positions": [
+        {
+          "endLine": 477,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 477,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 125,
+            "nextLine": 0,
+            "previousLine": 5597
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": "CERT-MSC52-CPP"
+    },
+    {
+      "code": "V755",
+      "cwe": 123,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "Copying potentially tainted data from 'std::cin' to buffer 'str'. Buffer overflow is possible.",
+      "positions": [
+        {
+          "endLine": 522,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 522,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 710327,
+            "nextLine": 187825,
+            "previousLine": 1456063943
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": "CERT-STR31-C"
+    },
+    {
+      "code": "V668",
+      "cwe": 571,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "There is no sense in testing the 'str' pointer against null, as the memory was allocated using the 'new' operator. The exception will be generated in the case of memory allocation error.",
+      "positions": [
+        {
+          "endLine": 519,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 519,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 2955654,
+            "nextLine": 123,
+            "previousLine": 365333981
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": "CERT-MEM52-CPP"
+    },
+    {
+      "code": "V1077",
+      "cwe": 457,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "Conditional initialization inside the 'X' constructor may leave some members uninitialized. Inspect the following: ptr, index.",
+      "positions": [
+        {
+          "endLine": 423,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 423,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 67613773,
+            "nextLine": 123,
+            "previousLine": 0
+          }
+        },
+        {
+          "endLine": 427,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 427
+        },
+        {
+          "endLine": 428,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 428
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V1077",
+      "cwe": 457,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "Conditional initialization inside the 'BBV' constructor may leave some members uninitialized. Inspect the following: vec, len, size.",
+      "positions": [
+        {
+          "endLine": 19,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 19,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 29844177,
+            "nextLine": 123,
+            "previousLine": 0
+          }
+        },
+        {
+          "endLine": 23,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 23
+        },
+        {
+          "endLine": 26,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 26
+        },
+        {
+          "endLine": 27,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 27
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V1077",
+      "cwe": 457,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "Conditional initialization inside the 'BBV' constructor may leave some members uninitialized. Inspect the following: len, size, vec.",
+      "positions": [
+        {
+          "endLine": 38,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 38,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 477594917,
+            "nextLine": 123,
+            "previousLine": 0
+          }
+        },
+        {
+          "endLine": 42,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 42
+        },
+        {
+          "endLine": 43,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 43
+        },
+        {
+          "endLine": 44,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 44
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V1077",
+      "cwe": 457,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "Conditional initialization inside the 'BBV' constructor may leave some members uninitialized. Inspect the following: size, len, vec.",
+      "positions": [
+        {
+          "endLine": 76,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 76,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 1864141,
+            "nextLine": 123,
+            "previousLine": 0
+          }
+        },
+        {
+          "endLine": 80,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 80
+        },
+        {
+          "endLine": 81,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 81
+        },
+        {
+          "endLine": 82,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\BBV.cpp",
+          "line": 82
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V690",
+      "cwe": 0,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 2,
+      "message": "The 'NodeBoolTree' class implements a copy constructor, but lacks the copy assignment operator. It is dangerous to use such a class.",
+      "positions": [
+        {
+          "endLine": 6,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\SAT_DPLL\\NodeBoolTree.h",
+          "line": 6,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 4670247,
+            "nextLine": 123,
+            "previousLine": 0
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V808",
+      "cwe": 0,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 1,
+      "message": "'Elements' object of 'QList' type was created but was not utilized.",
+      "positions": [
+        {
+          "endLine": 25,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\main.cpp",
+          "line": 25,
+          "navigation": {
+            "columns": 0,
+            "currentLine": -1862891572,
+            "nextLine": 45096467,
+            "previousLine": -557811401
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    },
+    {
+      "code": "V808",
+      "cwe": 0,
+      "falseAlarm": false,
+      "favorite": false,
+      "level": 1,
+      "message": "'inputs' object of 'QStringList' type was created but was not utilized.",
+      "positions": [
+        {
+          "endLine": 27,
+          "file": "C:\\Users\\dmiti\\Documents\\repositories\\Strategy_Allocation_SAT_lab2\\main.cpp",
+          "line": 27,
+          "navigation": {
+            "columns": 0,
+            "currentLine": 14598437,
+            "nextLine": 0,
+            "previousLine": 45096467
+          }
+        }
+      ],
+      "projects": [
+        "Strategy_Allocation_SAT_lab2"
+      ],
+      "sastId": ""
+    }
+  ]
+}
